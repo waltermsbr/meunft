@@ -99,6 +99,11 @@
             imgNFT.src = metadados.image;
             const divImg = document.getElementById("divImg");
             divImg.style.display = "block";
+            //eventos
+            const filtroEvento = contract.filters.Transfer;
+            eventos = await contract.queryFilter(filtroEvento, -90000); // -90000 indica quantos blocos antes efetuar a consulta
+            console.log("Numero de transferencias: ", eventos.length);
+            console.log("Logs de transferencias: ", eventos);
         }
     </script>
     <script>

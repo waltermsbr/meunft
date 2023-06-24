@@ -19,10 +19,7 @@
             <img width="200" height="200" id="imgNFT" src="" alt="imagem NFT" />
         </div>
     </section>
-    <script>
-        if (window.ethereum != null) {
-    </script>
-    <section>
+    <section id="sectionForm" style="display: none;">
         <h2>Novo NFT</h2>
         <div>
             <form action="" name="formMint" id="formMint" method="get">
@@ -39,10 +36,7 @@
         </div>
     </section>
     <hr />
-    <script>
-        }
-    </script>
-    <section>
+    <section id="sectionRede" style="display: none;">
         <h2>Rede e Infra</h2>
         <h3>Conta selecionada: <span id="networkAccount">&nbsp;</span></h3>
         <h3>Rede selecionada: <span id="networkNetworkID">&nbsp;</span></h3>
@@ -63,6 +57,10 @@
                 console.log("selected provider: ", provider);
                 console.log("network:", network);
             } else {
+                const sectionForm = document.getElementById("sectionForm");
+                sectionForm.style.display = "block";
+                const sectionRede = document.getElementById("sectionRede");
+                sectionRede.style.display = "block";
                 // Connect to the MetaMask EIP-1193 object. This is a standard
                 // protocol that allows Ethers access to make all read-only
                 // requests through MetaMask.
